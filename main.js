@@ -18,8 +18,12 @@ app.get(`/`, (req, resp) => {
     // what is the media type
     resp.type('text/html')
     resp.status(200)
-    resp.send(`<h1> The current time is ${new Date()} </h1> <h2> This is a modified line! </h2>`)
+    resp.send(`<h1> The current time is ${new Date()} </h1> <img src= "/static/645.jpg"> This is a modified line! </h2> <h2> This is a modified line! </h2>`)
 })
+
+//Serve static resource
+
+app.use("/static", express.static(__dirname+ "/static"))
 
 //Start our web application
 app.listen(port, () => {
